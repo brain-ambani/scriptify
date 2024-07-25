@@ -12,36 +12,43 @@ import Link from "next/link";
 
 const features = [
   {
+    id: 1,
     name: "Store your PDF Docs",
     description:
       "Keep all your important PDF files securely storted and easily accessible anytime, anywhere.",
     icon: GlobeIcon,
   },
   {
+    id: 2,
     name: "Super Fast responses",
     description:
       "Experience lightning-fast answers to your queries, ensuring you get the information you need instantly.",
     icon: ZapIcon,
   },
   {
+    id: 3,
     name: "Chat Memorization",
     description:
       "Our intelligent chatbot remembers previous interactions, provinga seamless and personalized experience.",
     icon: BrainCogIcon,
   },
   {
+    id: 4,
+
     name: "Interactive PDF Viewer",
     description:
       "Engage with your PDFs like never before using our intuitive and Interactive viewer.",
     icon: EyeIcon,
   },
   {
+    id: 5,
     name: "Cloud Backup",
     description:
       "Rest assured knowing your documents are safely backed on the cloud, protected from loss or damage.",
     icon: ServerCogIcon,
   },
   {
+    id: 6,
     name: "Responsive Across Devices",
     description:
       "Access and chat with your PDFs seamlessy on any device; desktop, tablet or smartphone.",
@@ -93,6 +100,24 @@ export default function Home() {
               <div className="absolute bottom-0 -inset-x-32 bg-gradient-to-t from-white/95 pt-[5%]" />
             </div>
           </div>
+        </div>
+        <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
+          <dl
+            className="mx-auto grid grid-cols-1 gap-x-6 gap-y-10
+          text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:mx-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16"
+          >
+            {features.map((feature) => (
+              <div key={feature.id} className="relative pl-9">
+                <dt className="inline font-semibold text-gray-900">
+                  <feature.icon
+                    aria-hidden="true"
+                    className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                  />
+                </dt>
+                <dd>{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </main>
