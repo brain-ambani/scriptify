@@ -1,5 +1,6 @@
 "use server";
 
+import { generateEmbeddingsInPineconeVectorStore } from "@/lib/langChain";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
